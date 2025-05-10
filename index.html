@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AuraWeather - Under the Weather</title>
+
+  <!-- External Libraries -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"/>
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet"/>
+
+  <!-- Local CSS -->
+  <link rel="stylesheet" href="weather.css"/>
+</head>
+
+<body>
+  <div class="container animate__animated animate__fadeIn">
+    <div class="weather-card">
+      <div class="app-header">
+        <i class="fas fa-cloud-sun animate__animated animate__pulse animate__infinite"></i>
+        <h1>AuraWeather</h1>
+      </div>
+
+      <div class="search-container">
+        <div class="select-wrapper">
+          <select id="city-input">
+            <option value="">Select a city...</option>
+            <option value="Mumbai">Mumbai, Maharashtra</option>
+            <option value="Delhi">Delhi, Delhi</option>
+            <option value="Bangalore">Bangalore, Karnataka</option>
+            <option value="Hyderabad">Hyderabad, Telangana</option>
+            <option value="Ahmedabad">Ahmedabad, Gujarat</option>
+            <option value="Chennai">Chennai, Tamil Nadu</option>
+            <option value="Kolkata">Kolkata, West Bengal</option>
+            <option value="Pune">Pune, Maharashtra</option>
+            <option value="Jaipur">Jaipur, Rajasthan</option>
+            <option value="Lucknow">Lucknow, Uttar Pradesh</option>
+            <option value="Bhopal">Bhopal, Madhya Pradesh</option>
+          </select>
+        </div>
+        <button id="city-input-btn" onclick="getWeather()">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+
+      <div id="weather-info" class="animate__animated animate__fadeIn" style="display:none;">
+        <div class="location-info">
+          <h2 id="city-name"></h2>
+          <p id="date" class="date-time"></p>
+        </div>
+
+        <div class="weather-main">
+          <div class="temperature-display">
+            <img id="weather-icon" src="" alt="Weather Icon"/>
+            <span id="temperature"></span>
+          </div>
+          <div class="temp-bar">
+            <div class="temp-bar-fill" id="temp-bar-fill"></div>
+          </div>
+        </div>
+
+        <p id="description" class="weather-desc"></p>
+
+        <div class="weather-details">
+          <div class="detail-item">
+            <i class="fas fa-wind"></i>
+            <span id="wind-speed"></span>
+          </div>
+          <div class="detail-item">
+            <i class="fas fa-tint"></i>
+            <span id="humidity"></span>
+          </div>
+          <div class="detail-item">
+            <i class="fas fa-compress-alt"></i>
+            <span id="pressure"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-note">
+        <p>Powered by <a href="https://openweathermap.org/" target="_blank">OpenWeatherMap</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- JS Libraries -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://momentjs.com/downloads/moment.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+  <script src="weather.js"></script>
+</body>
+</html>
